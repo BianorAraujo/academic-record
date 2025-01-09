@@ -2,6 +2,8 @@
 
 This application was created as a chalenger to validate my skills in a hiring process.
 
+In this system you can register students and their academic records by file upload.
+
 ### Technologies Used
 
 * Angular 16

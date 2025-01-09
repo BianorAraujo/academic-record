@@ -1,4 +1,4 @@
-# School Record
+# Academic Record
 
 This application was created as a chalenger to validate my skills in a hiring process.
 

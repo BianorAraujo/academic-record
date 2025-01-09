@@ -1,65 +1,65 @@
-# Cadastro Escolar
-Aplicação para cadastro de usuários e seus históricos escolares.
-Desenvolvida para validação técnica.
+# School Record
 
+This application was created as a chalenger to validate my skills in a hiring process.
 
-## Tecnologias
+### Technologies Used
 
 * Angular 16
 * Angular Material
 * .NET 6.0
-* Dapper
+* Dapper ORM
 * SQL Server
 * Docker
 
 
-## Como iniciar
+### How to start
 
-Para iniciar o projeto você precisa ter instalado o Docker CLI ou Docker Desktop [https://www.docker.com](https://www.docker.com)
+This project was builted to be easily tested.
+You'll need to install the Docker CLI or Docker Desktop [https://www.docker.com](https://www.docker.com)
 
-Clone o repositório e entre no diretório onde foi clonado.
+Clone this repository and go to the directory where it was cloned.
 
-Execute o seguinte comando:
+Run this command:
 ```
-docker compose -f compose.yaml up --build -d
-```
-
-Acessar a aplicação web:
-```
-http://localhost:4200
+  docker compose -f compose.yaml up --build -d
 ```
 
-Acessar a API:
+Url to access the application:
 ```
-http://localhost:5047/swagger/
+  http://localhost:4200
+```
+
+Url to access the API:
+```
+  http://localhost:5047/swagger/
 ```
 
 
 
-## Imagens
+### Images
 
-### Home
+#### Home
 
 <div align="center">
   <img src="./img/home.png">
 </div>
 
 
-### Cadastrar
+#### Register
 
 <div align="center">
   <img src="./img/cadastro.png">
 </div>
 
 
-### Editar
+### Update
 
 <div align="center">
   <img src="./img/editar.png">
 </div>
 
 
-### Histórico
+### Academic Record
 
 <div align="center">
   <img src="./img/historico.png">

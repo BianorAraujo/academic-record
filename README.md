@@ -17,7 +17,8 @@ In this system you can register students and their academic records by file uplo
 ### How to start
 
 This project was builted to be easily tested.
-You'll need to install the Docker CLI or Docker Desktop [https://www.docker.com](https://www.docker.com)
+
+You'll need to install the Docker CLI or Docker Desktop, [click here](https://www.docker.com) to download.
 
 Clone this repository and go to the directory where it was cloned.
 

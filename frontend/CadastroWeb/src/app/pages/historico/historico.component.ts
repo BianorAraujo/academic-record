@@ -7,6 +7,7 @@ import { EscolaridadeService } from '../../services/escolaridade.service';
 import { HistoricoEscolar } from '../../models/HistoricoEscolar';
 import { UploadComponent } from '../../componentes/upload/upload.component';
 import { HistoricoService } from '../../services/historico.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-historico',
@@ -20,6 +21,7 @@ export class HistoricoComponent implements OnInit{
   nivelEscolar?: string;
   hasHistoricos: boolean = false;
   historicos: HistoricoEscolar[] = [];
+  UploadedFile: boolean = false;
 
   colunas = ['Nome', 'Download'];
   
@@ -28,10 +30,14 @@ export class HistoricoComponent implements OnInit{
     private escolaridadeService: EscolaridadeService,
     private historioService: HistoricoService,
     private route: ActivatedRoute,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
+    this.startPage();
+  }
 
+  startPage() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(this.id);
     
@@ -89,12 +95,31 @@ export class HistoricoComponent implements OnInit{
   }
 
   openDialog(id?: number){
-    this.dialog.open(UploadComponent, {
+    const dialogRef = this.dialog.open(UploadComponent, {
       width: '350px',
       height: '350px',
       data: {
         id: id
       }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result?.cancel && result?.success) {
+        this.showSnackBar("Record uploaded successfully!", true);
+        this.startPage();
+      }
+
+      if (!result?.cancel && !result?.success)
+        this.showSnackBar("Something went wrong!", false);
+      
+    });
+  }
+
+  showSnackBar(message: string, success: boolean): void {
+    this.snackBar.open(message, 'Close', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      panelClass: success ? 'snackbar-success' : 'snackbar-error'
     });
   }
 

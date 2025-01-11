@@ -18,8 +18,17 @@ export class CadastrarComponent {
 
   createUsuario(usuario: Usuario){
     this.usuarioService.CreateUsuario(usuario).subscribe((data) => {
+      
       this.router.navigate(['/']);
-      this.snackBar.open("Usuário criado com sucesso!", "Ok");
+      this.showSnackBar("User created successfully!", data!=null);
     })
+  }
+
+  showSnackBar(message: string, success: boolean): void {
+    this.snackBar.open(message, 'Close', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      panelClass: success ? 'snackbar-success' : 'snackbar-error'
+    });
   }
 }

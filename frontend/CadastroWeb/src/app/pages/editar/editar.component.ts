@@ -28,7 +28,15 @@ export class EditarComponent implements OnInit {
   editarUsuario(usuario: Usuario){
     this.usuarioService.EditarUsuario(usuario).subscribe((data) => {
       this.router.navigate(['/']);
-      this.snackBar.open("Usuário editado com sucesso!", "Ok");
+      this.showSnackBar("User updated successfully!", true);
+    });
+  }
+
+  showSnackBar(message: string, success: boolean): void {
+    this.snackBar.open(message, 'Close', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      panelClass: success ? 'snackbar-success' : 'snackbar-error'
     });
   }
 

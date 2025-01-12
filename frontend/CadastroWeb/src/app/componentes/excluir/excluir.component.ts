@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Usuario } from '../../models/Usuario';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-excluir',
@@ -16,7 +17,8 @@ export class ExcluirComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     @Inject(MAT_DIALOG_DATA) public data: any, 
-    private ref: MatDialogRef<ExcluirComponent>
+    private ref: MatDialogRef<ExcluirComponent>,
+    private snackBar: MatSnackBar
     ){}
 
   ngOnInit(): void {
@@ -30,12 +32,11 @@ export class ExcluirComponent implements OnInit {
 
   excluir(){
     this.usuarioService.ExcluirUsuario(this.inputData.id).subscribe((data) => {
-      this.ref.close();
-      window.location.reload();
-    })
+      this.ref.close({ success: true, cancel: false });
+    });
   }
 
   cancelar(){
-    this.ref.close();
+    this.ref.close({ cancel: true });
   }
 }

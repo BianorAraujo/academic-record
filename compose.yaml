@@ -1,13 +1,13 @@
-version: '3.8'
+version: '3.9'
 
 services:
   # Banco de Dados SQL Server
   sql-server:
-    image: mcr.microsoft.com/azure-sql-edge
-    container_name: azure-sql-server
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sql-server
     environment:
-      MSSQL_SA_PASSWORD: "Password123"
       ACCEPT_EULA: "1"
+      MSSQL_SA_PASSWORD: "Password1!"
     ports:
       - "1433:1433"
     volumes:
@@ -20,8 +20,8 @@ services:
     build:
       context: ./database
       dockerfile: Dockerfile
-    container_name: azure-sql-server-cmd
-    command: /bin/bash -c '/opt/mssql-tools/bin/sqlcmd -S azure-sql-server -U sa -P Password123 -i dbinit.sql'
+    container_name: sql-server-cmd
+    command: /bin/bash -c '/opt/mssql-tools/bin/sqlcmd -S sql-server -U sa -P Password1! -i /dbinit.sql'
     restart: on-failure
     networks:
       - minha-rede
@@ -40,6 +40,8 @@ services:
       - apivolume:/var/opt/api
     networks:
       - minha-rede
+    depends_on: 
+      - sql-server
 
   # Aplicação Angular 16
   angular-app:

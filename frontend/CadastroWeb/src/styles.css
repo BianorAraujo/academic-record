@@ -37,3 +37,15 @@ mat-form-field{
 .btn-div button {
     width: 50%;
 }
+
+.snackbar-success {
+    --mdc-snackbar-container-color: rgb(25, 135, 84);
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+    --mat-snack-bar-button-color: rgba(255, 255, 255, 0.87);
+}
+  
+.snackbar-error {
+    --mdc-snackbar-container-color: rgb(220, 53, 69);
+    --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+    --mat-snack-bar-button-color: rgba(255, 255, 255, 0.87);
+}

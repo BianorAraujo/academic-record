@@ -41,10 +41,10 @@
                     <ng-container matColumnDef="Download">
                         <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Ações </th>
                         <td mat-cell *matCellDef="let historico">
-                            <button mat-mini-fab color="primary" (click)="download(historico.idHistoricoEscolar)">
+                            <button mat-mini-fab color="primary" matTooltip="Download" (click)="download(historico.idHistoricoEscolar)">
                                 <mat-icon>arrow_downward</mat-icon>
                             </button>
-                            <button mat-mini-fab color="primary" (click)="excluir(historico.idHistoricoEscolar)">
+                            <button mat-mini-fab color="primary" matTooltip="Delete" (click)="excluir(historico.idHistoricoEscolar)">
                                 <mat-icon>clear</mat-icon>
                             </button>
                         </td>

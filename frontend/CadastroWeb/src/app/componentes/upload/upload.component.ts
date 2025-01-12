@@ -20,30 +20,25 @@ export class UploadComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
     this.idUsuario = this.data.id;
   }
 
   onFileSelected(data: any): void {
-
     this.selectedFile = data.target.files[0] ?? null;
   }
 
   salvar(){
-
     const formData = new FormData();
     formData.append('id', this.idUsuario);
     formData.append('file', this.selectedFile);
 
     this.historicoService.Upload(formData).subscribe((data) => {
       console.log(data);
-      this.ref.close();
-      window.location.reload();
+      this.ref.close({ success: true, cancel: false });
     });
   }
 
   cancelar(){
-
-    this.ref.close();
+    this.ref.close({ cancel: true });
   }
 }

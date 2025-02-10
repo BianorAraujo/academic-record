@@ -1,6 +1,7 @@
 # Academic Record
 
-![last-commit](https://badgen.net/github/last-commit/BianorAraujo/academic-record) ![license](https://badgen.net/github/license/BianorAraujo/academic-record) ![open-issues](https://badgen.net/github/open-issues/BianorAraujo/academic-record)
+![last-commit](https://badgen.net/github/last-commit/BianorAraujo/academic-record) ![license](https://badgen.net/github/license/BianorAraujo/academic-record)
+![open-issues](https://badgen.net/github/open-issues/bianoraraujo/academic-record)
 
 This application was created as a chalenger to validate my skills in a hiring process.
 

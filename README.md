@@ -3,7 +3,7 @@
 ![last-commit](https://badgen.net/github/last-commit/BianorAraujo/academic-record) ![license](https://badgen.net/github/license/BianorAraujo/academic-record)
 ![open-issues](https://badgen.net/github/open-issues/bianoraraujo/academic-record)
 
-This application was created as a chalenger to validate my skills in a hiring process.
+This application was created as a full stack code chalenge to validate my skills in a hiring process.
 
 In this system you can register students and their academic records by file upload.
 
